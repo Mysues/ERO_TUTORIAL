@@ -1,6 +1,6 @@
 #include <ERO.h>
 
-ERO BoBot(RobotPin);
+ERO BoBot(&RobotPin,&GamePad);
 
 void setup(){
     BoBot.begin();

@@ -9,13 +9,15 @@ void setup(){
 void loop(){
     BoBot.forward(80);
     delay(1000);
-    
-    BoBot.backward(80);
-    delay(1000);
-    
-    BoBot.turnLeft(80);
+
+    BoBot.stop();
     delay(1000);
 
-    BoBot.turnRight(80);
+    BoBot.backward(80);
     delay(1000);
+
+    BoBot.stop();
+    delay(1000);
+
+    BoBot.taskFinish();
 }
