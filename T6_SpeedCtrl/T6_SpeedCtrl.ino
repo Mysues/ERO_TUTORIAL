@@ -2,7 +2,7 @@
 
 ERO BoBot(&RobotPin,&GamePad);
 
-int speed;
+int robotSpeed;
 
 void setup(){
     // Serial.begin(9600);
@@ -10,8 +10,8 @@ void setup(){
 }
 
 void loop(){
-    speed = BoBot.speedCtrl();
+    robotSpeed = BoBot.speedCtrl();
     // Serial.print("Speed = ");
     // Serial.println(speed);
-    BoBot.forward(speed);
+    BoBot.forward(robotSpeed);
 }
