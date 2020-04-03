@@ -8,7 +8,7 @@ void setup(){
 }
 
 void loop(){
-    if(BoBot.process()){
+    if(BoBot.Bluetooth.process()){
         // GamePad.print();
         if(GamePad.UP){
             Serial.println("UP is pressed");
