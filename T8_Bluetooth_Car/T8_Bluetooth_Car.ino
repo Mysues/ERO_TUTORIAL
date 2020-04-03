@@ -2,16 +2,15 @@
 
 ERO BoBot(&RobotPin, &GamePad);
 
-int speed = 0; //from SpeedCtrl Tutorial
+// int speedRobot = 0; //from SpeedCtrl Tutorial
 
 void setup(){
-    Serial.begin(9600);
     BoBot.begin();
 }
 
 void loop(){
-    speed = BoBot.speedCtrl(); //from SpeedCtrl Tutorial 
-    if(BoBot.process()){
+    // speedRobot = BoBot.speedCtrl(); //from SpeedCtrl Tutorial 
+    if(BoBot.Bluetooth.process()){
         if(GamePad.UP){
             BoBot.forward(80);
         }
@@ -28,17 +27,23 @@ void loop(){
             BoBot.turnRight(80);
         }
 
-        else if(GamePad.SQUARE){
-            BoBot.leftSignal("ON");
+        else{
+            BoBot.stop();
         }
 
-        else if(GamePad.CIRCLE){
-            BoBot.leftSignal("OFF");
-        }
+        // else if(GamePad.SQUARE){
+        //     BoBot.leftSignal("ON");
+        //     BoBot.righSignal("ON");
+        // }
 
-        else if(GamePad.TRIANGLE){
-            BoBot.beeper(1);
-        }
+        // else if(GamePad.CIRCLE){
+        //     BoBot.leftSignal("OFF");
+        //     BoBot.rightSignal("OFF");
+        // }
+
+        // else if(GamePad.TRIANGLE){
+        //     BoBot.beeper(1);
+        // }
         
     }
 }
